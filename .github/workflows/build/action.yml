@@ -1,0 +1,39 @@
+name: build
+description: Build, run unit test, etc
+
+on:
+  workflows_call:
+    inputs:
+      bit-token:
+        required: true
+        type: string
+        descrition: Bit.dev token
+
+runs:
+  using: "composite"
+  steps:
+    - name: Use Node.js 20
+      uses: actions/setup-node@v1
+      with:
+        node-version: 20.x
+    - name: Install Bit Version Manager
+      shell: bash
+      run: npm i -g @teambit/bvm
+    - name: Install latest Bit version
+      shell: bash
+      run: bvm install
+    - name: add bvm bin folder to path
+      shell: bash
+      run: echo "$HOME/bin" >> $GITHUB_PATH
+    - name: Set up bit config
+      shell: bash
+      run: |
+        bit config set analytics_reporting false
+        bit config set anonymous_reporting false
+        bit config set user.token ${{inputs.bit-token}}
+    - name: Install packages using bit
+      shell: bash
+      run: bit install
+    - name: Build success
+      shell: bash
+      run: bit build

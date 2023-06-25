@@ -1,0 +1,16 @@
+# This workflow run CI
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        uses: ./.github/workflows/build
+        with:
+          bit-token: ${{secrets.BIT_TOKEN}}
