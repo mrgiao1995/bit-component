@@ -1,8 +1,9 @@
 name: Update .bitmap
 
 on:
+  workflow_dispatch:
   workflow_run:
-    workflows: [tag-and-export]
+    workflows: [Tag and Export Components]
     branches: [main]
     types:
       - completed
