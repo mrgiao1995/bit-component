@@ -27,7 +27,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "mrgiao1995.bit-component"
+    "defaultScope": "mrgiao1995.common-ui"
   },
   /**
    * main configuration for component dependency resolution.
