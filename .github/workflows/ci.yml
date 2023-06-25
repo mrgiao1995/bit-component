@@ -12,5 +12,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         uses: ./.github/workflows/build
-        with:
-          bit-token: ${{secrets.BIT_TOKEN}}
