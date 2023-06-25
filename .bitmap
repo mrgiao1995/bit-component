@@ -15,6 +15,12 @@
         "defaultScope": "mrgiao1995.common-ui",
         "mainFile": "index.ts",
         "rootDir": "common-ui/hello-world",
+        "nextVersion": {
+            "version": "patch",
+            "message": "init project",
+            "username": "mrgiao1995",
+            "email": "mrgiao1995@outlook.com"
+        },
         "config": {
             "teambit.react/react": {},
             "teambit.envs/envs": {
