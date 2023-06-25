@@ -12,6 +12,7 @@ jobs:
   update-bitmap:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Download .bitmap
         uses: actions/download-artifact@v3
         with:
